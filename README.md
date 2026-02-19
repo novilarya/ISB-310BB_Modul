@@ -1,4 +1,5 @@
-NRP   : 162023024, Nama  : Novila Arya Minar Saputra
+NRP   : 162023024
+Nama  : Novila Arya Minar Saputra
 
 A. Week 1 - HTML, CSS, Bootsrap
    Pada minggu ini dipelajari beberapa hal, diantaranya:
