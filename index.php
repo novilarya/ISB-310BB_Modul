@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if($_SESSION['user'] ?? null) {
+    $user = $_SESSION['user'];
+} else {
+    $user = null;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -28,6 +38,13 @@
                     Mode Gelap
                 </button>
             </div>
+            
+            <?php if ($user !== null) {?>
+                <span class="text-white m-2"><?php echo $user; ?></span>
+                <a href="controller/proses_logout.php" class="btn btn-outline-light btn-sm m-2">Logout</a>   
+            <?php } else { ?>
+                <a href="login.php" class="btn btn-outline-light btn-sm m-2">Login</a>   
+            <?php } ?>
         </div>
     </nav>
 
@@ -79,7 +96,7 @@
                         <span class="stok-text">Stok: 10</span>
                         <div class="d-flex justify-content-between">
                             <button class="btn btn-primary btn-detail-beli w-50 me-2">Beli</button>
-                            <button class="btn btn-outline-danger btn-wishlist w-50">Wishlist</button>
+                            <button tton class="btn btn-outline-danger btn-wishlist w-50">Wishlist</button>
                         </div>                        
                     </div>
                 </div>
@@ -167,6 +184,6 @@
     <footer class="bg-dark text-white text-center p-3">@ 2026 Sistem Manajemen Sepatu</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
